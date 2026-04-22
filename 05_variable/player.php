@@ -14,6 +14,7 @@ $is_active = true;
 // TODO: 変数 last_login : null (値なし)
 $last_login = null;
 // TODO: 変数 items : 配列 (複数のアイテムを格納)
+$items = ["コーヒー", "ばなな", "りんご"];
 
 // TODO: 変数 status : 連想配列 (キーと値のペアでステータスを格納)
 // 例: "hp" => 100, "mp" => 50, "job" => "戦士"
