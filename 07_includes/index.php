@@ -148,27 +148,29 @@ $memberLabel     = $isMember ? '会員' : '非会員';
             <p class="text-sm text-slate-500 mb-5">商品データを <code class="bg-slate-100 px-1 rounded text-rose-600">includes/products.php</code> に一元管理。追加・変更はそこだけでOK。</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <?php foreach ($products as $i => $product): ?>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-                            <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 text-lg mb-2"><?= htmlspecialchars($product['name']) ?></h4>
-                            <div class="flex justify-between items-end">
-                                <div>
-                                    <p class="text-xs text-slate-400">単価</p>
-                                    <p class="text-xl font-semibold"><?= CURRENCY ?><?= number_format($product['price']) ?></p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="text-xs text-slate-400">数量</p>
-                                    <p class="text-xl font-bold text-sky-600">×<?= $quantities[$i] ?></p>
+                <?php if (isset($products) && is_array($products) && count($products) > 0): ?>
+                    <?php foreach ($products as $i => $product): ?>
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
+                                <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-5">
+                                <h4 class="font-bold text-slate-900 text-lg mb-2"><?= htmlspecialchars($product['name']) ?></h4>
+                                <div class="flex justify-between items-end">
+                                    <div>
+                                        <p class="text-xs text-slate-400">単価</p>
+                                        <p class="text-xl font-semibold"><?= CURRENCY ?><?= number_format($product['price']) ?></p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-xs text-slate-400">数量</p>
+                                        <p class="text-xl font-bold text-sky-600">×<?= $quantities[$i] ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </section>
 
