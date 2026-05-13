@@ -59,10 +59,10 @@ $total = $amount1 + $amount2 + $amount3;
 
 // 三項演算
 // TODO: 会員の場合、割引率を DISCOUNT_RATE に設定、そうでない場合 0
-$discountRate = 0;
+$discountRate = ($isMember) ? DISCOUNT_RATE : 0;
 
 // TODO: isMember の値に応じて 会員 or 非会員
-$memberLabel = "";
+$memberLabel = ($isMember) ? "会員" : "非会員";
 
 // 割引額
 $discount = $total * $discountRate;
