@@ -5,7 +5,8 @@ $first_name = "Taro";
 
 // 文字列連結
 // TODO: ドット演算子: last_name と first_name の間に半角スペースを入れる
-$full_name = "";
+$full_name = $last_name . " " . $first_name;
+// full_name = last_name + " " + first_name;
 // TODO: テンプレートリテラル: last_name と first_name の間に半角スペースを入れる
 $full_name = "";
 
