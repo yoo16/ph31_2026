@@ -5,11 +5,14 @@
 
 // require_once: ファイルが存在しないと Fatal Error → 必須ファイルに使う
 // TODO: includes/config.php を読み込む
+require_once 'includes/config.php';
 
 // ２回目は無視される
+require_once 'includes/config.php';
 
 // require_once: 商品データも必須
 // TODO: includes/products.php を読み込む
+require_once 'includes/products.php';
 
 // 会員フラグ・数量（メインロジック）
 $isMember  = true;
