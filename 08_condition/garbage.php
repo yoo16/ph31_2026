@@ -5,10 +5,12 @@ $targetDate = isset($_GET['date']) ? new DateTime($_GET['date']) : new DateTime(
 // TODO: 曜日インデックス（0:日 〜 6:土）
 $weekIndex = (int) $targetDate->format('w');
 
-// 日本語の曜日名を取得 (IntlDateFormatterを使用)
-$formatter = new IntlDateFormatter('ja_JP', IntlDateFormatter::NONE, IntlDateFormatter::NONE, null, null, 'E');
 // TODO: 曜日フォーマット
-$weekDay = $formatter->format($targetDate);
+// 日本語の曜日名を取得 (IntlDateFormatterを使用)
+// $formatter = new IntlDateFormatter('ja_JP', IntlDateFormatter::NONE, IntlDateFormatter::NONE, null, null, 'E');
+// $weekDay = $formatter->format($targetDate);
+$weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+$weekDay = $weekdays[$weekIndex];
 
 // ゴミ出しのルールを定義
 $burnable = ["is_garbage" => true, "label" => "燃えるゴミ", "color" => "bg-rose-500"];
@@ -19,7 +21,7 @@ $none = ["is_garbage" => false, "label" => "回収なし", "color" => "bg-slate-
 // 1, 3 → 月、水 → 燃えるゴミ
 // 5 → 金 → 燃えないゴミ
 // 2, 4, 6, 0 → 火、木、土、日 → 回収なし
-$garbage = match($weekIndex) {
+$garbage = match ($weekIndex) {
     1, 3 => $burnable,
     5 => $unburnable,
     default => $none,
