@@ -19,10 +19,12 @@ $ranges = [
 // 各列の番号を格納する配列
 $columns = [];
 // TODO: 各列の番号の範囲をループ: foreach($ranges as $label => $range)
-// 各列の番号をシャッフル
-// shuffle($range);
-// 5つ選ぶ
-// $columns[$label] = array_slice($range, 0, 5);
+foreach ($ranges as $key => $range) {
+    // 各列の番号をシャッフル
+    shuffle($range);
+    // 5つ選ぶ
+    $columns[$key] = array_slice($range, 0, 5);
+}
 
 // 中央（N列の3番目）を FREE に
 $columns['N'][2] = 'FREE';
@@ -103,9 +105,11 @@ $colors = [
             <!-- Header Labels -->
             <div class="grid grid-cols-5 gap-2 mb-2">
                 <!-- TODO: コロン構文 foreach でラベルを繰り返し -->
+                <?php foreach ($labels as $label): ?>
                     <div class="<?= $colors[$label]['bg'] ?> rounded-2xl bingo-cell flex items-center justify-center text-2xl text-white font-black shadow-inner">
                         <?= $label ?>
                     </div>
+                <?php endforeach; ?>
             </div>
 
             <!-- Numbers Grid -->
