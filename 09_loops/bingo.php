@@ -106,18 +106,18 @@ $colors = [
             <div class="grid grid-cols-5 gap-2 mb-2">
                 <!-- TODO: コロン構文 foreach でラベルを繰り返し -->
                 <?php foreach ($labels as $label): ?>
-                    <div class="<?= $colors[$label]['bg'] ?> rounded-2xl bingo-cell flex items-center justify-center text-2xl text-white font-black shadow-inner">
-                        <?= $label ?>
-                    </div>
+                <div class="<?= $colors[$label]['bg'] ?> rounded-2xl bingo-cell flex items-center justify-center text-2xl text-white font-black shadow-inner">
+                    <?= $label ?>
+                </div>
                 <?php endforeach; ?>
             </div>
 
             <!-- Numbers Grid -->
             <div class="grid grid-cols-5 gap-2">
                 <!-- TODO: $rows で繰り返し -->
-                <?php foreach ([] as $row): ?>
+                <?php foreach ($rows as $row): ?>
                     <!-- TODO: $row で繰り返し -->
-                    <?php foreach ([] as $value): ?>
+                    <?php foreach ($row as $value): ?>
                         <?php
                         $isFree = ($value === 'FREE');
                         ?>
