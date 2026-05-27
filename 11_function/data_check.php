@@ -170,6 +170,10 @@ $results['number'] = [
                 </h2>
                 <div class="space-y-4">
                     <div>
+                        <span class="text-sm font-black text-slate-400 uppercase block mb-2">substr(0, 5) - 先頭5バイト</span>
+                        <code class="text-sm font-bold bg-slate-100 px-3 py-1 rounded-lg text-slate-700"><?= htmlspecialchars($results['substr']['substr_5']) ?></code>
+                    </div>
+                    <div>
                         <span class="text-sm font-black text-slate-400 uppercase block mb-2">mb_substr(0, 2) - 2文字抽出</span>
                         <code class="text-sm font-bold bg-slate-100 px-3 py-1 rounded-lg text-slate-700"><?= htmlspecialchars($results['substr']['mb_substr_2']) ?></code>
                     </div>
