@@ -86,9 +86,9 @@ if ($user && $product) {
     // TODO: calculateSubtotal関数を使用して、合計金額を計算
     $subtotal = calculateSubtotal($product['price'], $quantity);
     // TODO: $getExclTaxPrice を使用して、税込価格から税抜価格を計算
-    $exclTaxPrice = 0;
+    $exclTaxPrice = $getExclTaxPrice($product['price']);
     // TODO: calculatePoint関数を使用して、獲得予定ポイントを計算
-    $earnedPoints = 0;
+    $earnedPoints = calculatePoint($subtotal);
 }
 ?>
 
