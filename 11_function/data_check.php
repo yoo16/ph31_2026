@@ -25,11 +25,11 @@ $trimmedString = trim($rawString);
 // TODO: strlen, mb_strlen, strtoupper, strtolower関数を使用
 $results['string'] = [
     'raw' => $rawString,
-    'strlen' => 0,
-    'mb_strlen' => 0,
+    'strlen' => strlen($rawString),
+    'mb_strlen' => mb_strlen($rawString),
     'trimmed' => $trimmedString,
-    'upper' => "",
-    'lower' => "",
+    'upper' => strtoupper($trimmedString),
+    'lower' => strtolower($trimmedString),
 ];
 
 // 3. 部分文字列の抽出 (substr)
