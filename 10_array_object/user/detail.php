@@ -66,17 +66,25 @@ if (!$user) {
                 <!-- Profile Info -->
                 <div class="mb-8">
                     <!-- TODO: ユーザー名を表示 -->
-                    <h1 class="text-3xl font-black tracking-tight mb-1"></h1>
+                    <h1 class="text-3xl font-black tracking-tight mb-1">
+                        <?= $user['display_name'] ?>
+                    </h1>
                     <!-- TODO: アカウント名を @+アカウント名で表示 -->
-                    <p class="text-slate-400 font-bold text-sm uppercase tracking-widest"></p>
+                    <p class="text-slate-400 font-bold text-sm uppercase tracking-widest">
+                        @<?= $user['account_name'] ?>
+                    </p>
                 </div>
 
                 <!-- Roles & Tags -->
                 <div class="flex flex-wrap gap-2 mb-8">
                     <!-- TODO: ロールを表示 -->
-                    <span class="px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold ring-1 ring-indigo-100"></span>
+                    <span class="px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold ring-1 ring-indigo-100">
+                        <?= $user['role'] ?>
+                    </span>
                     <!-- TODO: IDを表示 -->
-                    <span class="px-4 py-1.5 bg-slate-50 text-slate-500 rounded-full text-xs font-bold ring-1 ring-slate-100">ID: </span>
+                    <span class="px-4 py-1.5 bg-slate-50 text-slate-500 rounded-full text-xs font-bold ring-1 ring-slate-100">
+                        ID: <?= $user['id'] ?>
+                    </span>
                 </div>
 
                 <!-- Bio Section -->
