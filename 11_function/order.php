@@ -66,7 +66,7 @@ function calculatePoint(int $amount, float $rate = POINT_RATE): int
  * メッセージの作成（無名関数 / クロージャ）
  */
 $formatGreeting = function (string $name) {
-    // return "{$name}さん、この商品を購入しますか？";
+    return "{$name}さん、この商品を購入しますか？";
 };
 
 /**
