@@ -53,10 +53,10 @@ $number = $isNumeric ? $testValue : 0;
 // TODO: number_format, ceil, floor, round関数を使用して、数値のフォーマットと丸め処理
 $results['number'] = [
     'raw' => $number,
-    'format' => "",
-    'ceil' => 0,
-    'floor' => 0,
-    'round' => 0,
+    'format' => number_format($number),
+    'ceil' => ceil($number),
+    'floor' => floor($number),
+    'round' => round($number),
 ];
 
 ?>
