@@ -60,7 +60,7 @@ if (!$user) {
                 <!-- Avatar -->
                 <div class="relative -mt-16 mb-6">
                     <!-- TODO: アバター画像を表示 -->
-                    <img src="../images/users/<?= $user['avatar'] ?>" alt="" class="w-32 h-32 rounded-3xl border-4 border-white shadow-lg object-cover bg-white">
+                    <img src="../images/users/<?= $user['avatar'] ?>" alt="<?= $user['avatar'] ?>" class="w-32 h-32 rounded-3xl border-4 border-white shadow-lg object-cover bg-white">
                 </div>
 
                 <!-- Profile Info -->
@@ -92,6 +92,7 @@ if (!$user) {
                     <h2 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">自己紹介</h2>
                     <p class="text-slate-600 leading-relaxed font-medium">
                         <!-- TODO: 自己紹介を表示: nl2br() htmlspecialchars() を使用 -->
+                        <?= nl2br($user['bio']) ?>
                     </p>
                 </div>
 
@@ -106,7 +107,9 @@ if (!$user) {
                         <div class="overflow-hidden">
                             <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Email</p>
                             <!-- TODO: emailを表示 -->
-                            <p class="text-sm font-bold text-slate-900 truncate"></p>
+                            <p class="text-sm font-bold text-slate-900 truncate">
+                                <?= $user['email'] ?>
+                            </p>
                         </div>
                     </div>
                 </div>
