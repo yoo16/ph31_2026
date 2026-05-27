@@ -19,7 +19,7 @@ $users = [
         "display_name" => "Bob Smith",
         "email" => "bob@example.com",
         "role" => "Editor",
-        "bio" => "コンテンツ編集者。趣味は写真撮影と旅行です。",
+        "bio" => "コンテンツ編集者。\n趣味は写真撮影と旅行です。",
         "avatar" => "2.jpg"
     ],
     [
@@ -28,7 +28,7 @@ $users = [
         "display_name" => "Alice Johnson",
         "email" => "alice@example.com",
         "role" => "User",
-        "bio" => "PHP学習中の初心者。バックエンド開発に興味があります。",
+        "bio" => "PHP学習中の初心者。\nバックエンド開発に興味があります。",
         "avatar" => "3.jpg"
     ],
 ];
