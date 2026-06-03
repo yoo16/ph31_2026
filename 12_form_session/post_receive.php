@@ -36,10 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['message'] = 'ログインに成功しました。';
 
         // TODO: 成功時はパスワードを保持しない: unset() 
+        unset($_SESSION['previous_post']['password']);
 
         // TODO: 認証が成功したら、get_request.php にリダイレクト
-        header('Location: get_request.php');
-        exit;
+        // header('Location: get_request.php');
+        // exit;
     } else {
         // 認証失敗
         $_SESSION['status'] = 'error';
