@@ -7,6 +7,9 @@
 
 // TODO: セッションの開始
 session_start();
+// セッションIDの再生成（セキュリティ向上のため）
+session_regenerate_id(true);
+
 // セッションから各種データを取得
 // TODO: previous_post
 $posts = $_SESSION['previous_post'] ?? [];
