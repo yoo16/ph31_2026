@@ -14,13 +14,13 @@ $day = 7;
 $next_time = $now_time + (24 * 60 * 60) * $day;
 
 // TODO: 現在の年: Y
-$year = 0;
+$year = date('Y');
 // TODO: 現在の月: m
-$month = 0;
+$month = date('m');
 // TODO: 現在の月の日数: t
-$days = 0;
+$days = date('t');
 // TODO: 現在の日付と時刻: Y/m/d H:i:s
-$today_string = "";
+$today_string = date('Y/m/d H:i:s');
 
 // x日後: strtotime() : +1 day
 $next_day_time = 0;
