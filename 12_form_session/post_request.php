@@ -11,9 +11,9 @@ session_start();
 // TODO: previous_post
 $posts = $_SESSION['previous_post'] ?? [];
 // TODO: status
-$status = "";
+$status = $_SESSION['status'] ?? '';
 // TODO: authUser
-$authUser = [];
+$authUser = $_SESSION['authUser'] ?? null;
 $message = flashMessage();
 
 // TODO: ステータスの削除 (リロード時に消えるように): unset() status
