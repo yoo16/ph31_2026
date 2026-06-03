@@ -8,7 +8,7 @@
 // TODO: GETデータの取得: $_GET スーパーグローバル変数を使用
 $queries = $_GET;
 // デバッグ：GETデータを表示して強制終了
-var_dump($queries);
+// var_dump($queries);
 // exit;
 
 // TODO: keyword チェック
