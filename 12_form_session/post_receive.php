@@ -15,14 +15,14 @@ const TEST_USER = [
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // TODO: POST を var_dump() で確認
-    var_dump($_POST);
-    exit;
+    // TODO: POST を var_dump() で確認したら、コメントアウト
+    // var_dump($_POST);
+    // exit;
 
     // TODO: POSTの email を取得
-    $email = "";
+    $email = htmlspecialchars($_POST['email']);
     // TODO: POSTの password を取得
-    $password = "";
+    $password = htmlspecialchars($_POST['password']);
 
     // TODO: 入力データの保持 (復元用): previous_post セッションに保存
 
