@@ -12,10 +12,10 @@ $queries = $_GET;
 // exit;
 
 // TODO: keyword チェック
-$keyword = $queries[''] ?? '';
+$keyword = $queries['keyword'] ?? '';
 // TODO: category チェック
-$category = $queries[''] ?? '';
-// TODO: SERVERグローバル変数からリクエストURIを取得
+$category = $queries['category'] ?? '';
+// SERVERグローバル変数からリクエストURIを取得
 $uri = $_SERVER['REQUEST_URI'] ?? '';
 ?>
 
