@@ -23,11 +23,11 @@ $days = date('t');
 $today_string = date('Y/m/d H:i:s');
 
 // x日後: strtotime() : +1 day
-$next_day_time = 0;
+$next_day_time = strtotime('+1 day');
 $next_day = date('Y/m/d', $next_day_time);
 
 // xヶ月前: strtotime() : -3 month
-$prev_day_time = 0;
+$prev_day_time = strtotime('-3 month');
 $prev_day = date('Y/m/d', $prev_day_time);
 
 // x時間後: strtotime() : +3 hour
