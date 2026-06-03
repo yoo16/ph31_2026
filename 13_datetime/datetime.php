@@ -17,6 +17,7 @@ $date_string1 = $date1->format('Y-m-d H:i:s');
 $date2 = new DateTime();
 $date2->setDate(2022, 3, 10)->setTime(10, 30, 45);
 // TODO: 日付の操作: modify() : +1 day
+$date2->modify('+1 day');
 
 $date_string2 = $date2->format('Y-m-d H:i:s');
 
