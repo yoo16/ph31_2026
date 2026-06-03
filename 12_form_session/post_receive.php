@@ -6,6 +6,7 @@
  */
 
 // TODO: セッションの開始
+session_start();
 
 // テストユーザー情報 (本来はデータベース等で管理します)
 const TEST_USER = [
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = htmlspecialchars($_POST['password']);
 
     // TODO: 入力データの保持 (復元用): previous_post セッションに保存
+    $_SESSION['previous_post'] = [ 'email' => $email ];
 
     // 認証検証
     if ($email === TEST_USER['email'] && $password === TEST_USER['password']) {
