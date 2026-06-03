@@ -5,9 +5,9 @@ date_default_timezone_set('Asia/Tokyo');
 // DateTimeクラスのインスタンス化
 $date = new DateTime();
 // TODO: 日付と時刻の設定: setDate(), setTime()
-
+$date->setDate(2026, 6, 3)->setTime(17, 21, 04);
 // TODO 日付と時刻のフォーマット: format() : Y-m-d H:i:s
-$date_string = "";
+$date_string = $date->format('Y-m-d H:i:s');
 
 // 比較用データ
 $date1 = new DateTime();
