@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['authUser'] = TEST_USER;
         $_SESSION['message'] = 'ログインに成功しました。';
 
-        // TODO: 成功時はパスワードを保持しない: unset() previous_post > password
+        // TODO: 成功時はパスワードを保持しない: unset() 
 
         // TODO: 認証が成功したら、get_request.php にリダイレクト
         header('Location: get_request.php');
