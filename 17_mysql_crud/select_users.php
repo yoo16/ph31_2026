@@ -4,7 +4,9 @@ require_once './lib/Database.php';
 
 use Lib\Database;
 
-$users = get();
+// http://localhost/..../select_users.php?limit=5 のように、URLクエリパラメータ limit で取得件数を指定できるようにする
+$limit = $_GET['limit'] ?? 50;
+$users = get($limit);
 
 /**
  * ユーザデータを取得する関数
