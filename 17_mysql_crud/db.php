@@ -20,13 +20,13 @@ $pdo = null;
 try {
     // TODO: PDO インスタンスを生成する
     // ヒント: new PDO(DSN文字列, ユーザー名, パスワード)
-    $pdo = null;
+    $pdo = new PDO($dsn, $db_user, $db_password);
 
     // TODO: 以下の2つの属性を設定する（コメントを外す）
     //   1. エラーモードを「例外を投げる」モードにする
     //   2. プリペアドステートメントのエミュレートを無効にする
-    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage();
     exit;
