@@ -10,12 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// POSTデータをサニタイズ
+$posts = sanitize($_POST);
+
 // TODO: セッションにPOSTデータを登録
-$_SESSION[APP_KEY]['signin'] = null;
+$_SESSION[APP_KEY]['signin'] = $posts;
 
 // TODO: 入力されたアカウント名とパスワードを取得
-$account_name = "";
-$password = "";
+$account_name = $posts['account_name'];
+$password = $posts['password'];
 
 // ユーザ認証: new User() で auth() を実行
 $user = new User();
