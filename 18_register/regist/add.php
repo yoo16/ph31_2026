@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // POSTデータ取得
 $posts = $_POST;
 // TODO: サニタイズ
-// $posts = sanitize($_POST);
+$posts = sanitize($_POST);
 
 // TODO: セッションの APP_KEY 下の regist にPOSTデータを保存
 $_SESSION[APP_KEY]['regist'] = $posts;
@@ -31,7 +31,7 @@ if (!empty($user_exists['id'])) {
 // User クラスのインスタンスを生成
 $user = new User();
 // TODO: User モデルの insert() を使ってユーザを登録
-$user_id = 0;
+$user_id = $user->insert($posts);
 
 if (empty($user_id)) {
     // エラーメッセージをセッションに保存
