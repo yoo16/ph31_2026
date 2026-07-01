@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['error' => 'Method Not Allowed'], JSON_UNESCAPED_UNICODE);
     exit;
 }
-
+// POSTデータの取得
 $body = json_decode(file_get_contents('php://input'), true);
 $tweet_id = isset($body['tweet_id']) ? (int) $body['tweet_id'] : null;
 
@@ -43,6 +43,6 @@ $liked = $like->fetch($tweet_id, $user_id);
 $data = ['like_count' => $like_count, 'liked' => $liked];
 // TODO: json_encode() で $data をJSON文字列に変換して $json に代入
 // オプション: JSON_UNESCAPED_UNICODE
-$json = '';
+$json = json_encode($data, JSON_UNESCAPED_UNICODE);
 // JSON出力
 echo $json;
