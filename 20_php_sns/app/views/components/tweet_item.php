@@ -2,7 +2,13 @@
 if (!isset($tweet)) return;
 if (!isset($auth_user)) return;
 ?>
-<div class="tweet-card px-4 py-4 border-b border-slate-100 hover:bg-slate-50 transition">
+<div
+    class="tweet-card px-4 py-4 border-b border-slate-100 hover:bg-slate-50 transition"
+    data-display-name="<?= h($tweet['display_name']) ?>"
+    data-account-name="<?= h($tweet['account_name']) ?>"
+    data-created-at="<?= h(date('Y/m/d', strtotime($tweet['created_at']))) ?>"
+    data-message="<?= h($tweet['message']) ?>"
+    data-image-path="<?= h($tweet['image_path']) ?>">
     <div class="flex gap-3">
         <a href="user/?id=<?= (int) $tweet['user_id'] ?>" class="shrink-0">
             <img src="<?= h($tweet['profile_image_url']) ?>" class="rounded-full w-10 h-10 object-cover">
