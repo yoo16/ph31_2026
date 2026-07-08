@@ -111,6 +111,7 @@ function openReplyModal(btn) {
     const message = document.getElementById('reply-target-message');
     const image = document.getElementById('reply-target-image');
 
+    console.log(card)
     if (!card || !modal || !textarea || !avatar || !displayName || !accountName || !createdAt || !message || !image) {
         return;
     }

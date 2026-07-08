@@ -12,7 +12,6 @@
     <?php endif ?>
 
     <?= $content ?? "" ?>
-
 </body>
 
 </html>
